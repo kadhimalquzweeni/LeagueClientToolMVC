@@ -71,11 +71,7 @@ namespace LoLClientTool.Services
             }
 
             return champion.Skins
-                .Where(skin =>
-                skin.Name == "default"
-                || (!string.IsNullOrWhiteSpace(skin.Name)
-                && !skin.Name.Contains('(')
-                && !skin.Name.Contains(')')))
+                .Where(skin => skin.ParentSkin == null)
                 .Select(skin =>
                 {
                     if (!int.TryParse(skin.Id, out int skinId))
@@ -147,6 +143,9 @@ namespace LoLClientTool.Services
 
             [JsonPropertyName("name")]
             public string Name { get; set; } = string.Empty;
+
+            [JsonPropertyName("parentSkin")]
+            public int? ParentSkin { get; set; }
         }
     }
 }
