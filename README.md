@@ -1,4 +1,4 @@
-# LoL Client Tool
+# LoL Client Tool MVC
 
 A local ASP.NET Core MVC web app for modifying your League of Legends profile through the League Client API. Built to practise MVC architecture, dependency injection, Razor views, HTTP services, Data Dragon asset usage, and polished frontend styling.
 
